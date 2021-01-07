@@ -1,0 +1,15 @@
+[unit]
+Description= decrypt
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/$USER/crypt/script/decrypt.sh
+WorkingDirectory=/home/$USER
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=multi-user.target
+
